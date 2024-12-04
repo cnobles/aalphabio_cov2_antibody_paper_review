@@ -20,3 +20,5 @@ The following are goals of this review:
 2. Find antibodies from the manuscript with bound structures available in the PDB, annotate which antigen residues are within 4 Angstroms, and compare these results with those reported in the manuscript.
 3. Using the AlphaSeq data from the manuscript, implement and benchmark an epitope-calling algorithm (raw data present in table 4 of supplementary info).
 
+## Notes:
+1. PDB search options often return unrelated structures or multiple structures have been submitted matching the query ("antibody identifier" + "SARS-CoV-2"). In the case of multiple structures, finer resolution structures were prefered and only one structure was selected per CoV binder.
