@@ -29,6 +29,7 @@ The following are goals of this review:
 - `README.md` (this file)
 - `download_pdb_files.ipynb`: Jupyter Notebook that creates a "pdb_files" directory and will download associated PDB files.
 - `identify_interacting_residues.ipynb`: Jupyter Notebook that creates two csv files indicating the atoms and residues interacting between the primary (SARS-CoV-2 Spike RDB) and the secondary chains (antibody fragments).
+- `manuscript_PDB_comparison.ipynb`: Jupyter Notebook that quickly compares the results from the PDB scanning to the results from the manuscript and proposes a metric to measure agreement / performance.
 - `LICENCE`: MIT
 - `manuscript_data/`: Directory with supplemental data from manuscript. A few files have been converted from excel to csv format compared to the archived manuscript.
 - `additional_data/`: Directory with additional data associated with this analysis.
