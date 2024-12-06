@@ -23,7 +23,8 @@ The following are goals of this review:
 ## Walkthrough
 1. Download PDB files by running the `download_pdb_files.ipynb` notebook. This will create the directory `pdb_files` in your local repo and download all PDB files from the `./additional_data/pdb_identifiers.csv` file.
 2. Run the `identify_interacting_residues.ipynb` notebook. This will generate two files within the '/additional_files' directory (`interacting_atoms.csv` and `interacting_residues.csv`). These files have been persisted with the repository as they take about 1h to generate. They contain information on atoms and residues from the structures that are interacting between primary and secondary chains.
-3. ...
+3. A quick comparison notebook (`manuscript_PDB_comparison.ipynb`) is included that looks at the agreement between the AlphaSeq positions that were identified and the PDB positions identifed for a few of the antibodies. Additionally, it proposes a method to measure the accuracy or agreement between the two datasets. This metric for agreement can be used to understand how well the current algorithm is doing at calling epitope residues and measure if new algorithms can improve the detection.
+4. ...
 
 ## Organization 
 - `README.md` (this file)
