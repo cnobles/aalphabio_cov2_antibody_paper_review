@@ -24,19 +24,24 @@ The following are goals of this review:
 1. Download PDB files by running the `download_pdb_files.ipynb` notebook. This will create the directory `pdb_files` in your local repo and download all PDB files from the `./additional_data/pdb_identifiers.csv` file.
 2. Run the `identify_interacting_residues.ipynb` notebook. This will generate two files within the '/additional_files' directory (`interacting_atoms.csv` and `interacting_residues.csv`). These files have been persisted with the repository as they take about 1h to generate. They contain information on atoms and residues from the structures that are interacting between primary and secondary chains.
 3. A quick comparison notebook (`manuscript_PDB_comparison.ipynb`) is included that looks at the agreement between the AlphaSeq positions that were identified and the PDB positions identifed for a few of the antibodies. Additionally, it proposes a method to measure the accuracy or agreement between the two datasets. This metric for agreement can be used to understand how well the current algorithm is doing at calling epitope residues and measure if new algorithms can improve the detection.
-4. ...
+4. Lastly, a notebook (`epitope_model_building.ipynb`) focusing on epitope modeling is included with a generated model based on the RBD data gathered from the PDB files. This notebook is used for data pre-processing, model training, and evaluation. 
 
 ## Organization 
 - `README.md` (this file)
 - `download_pdb_files.ipynb`: Jupyter Notebook that creates a "pdb_files" directory and will download associated PDB files.
 - `identify_interacting_residues.ipynb`: Jupyter Notebook that creates two csv files indicating the atoms and residues interacting between the primary (SARS-CoV-2 Spike RDB) and the secondary chains (antibody fragments).
 - `manuscript_PDB_comparison.ipynb`: Jupyter Notebook that quickly compares the results from the PDB scanning to the results from the manuscript and proposes a metric to measure agreement / performance.
+- `epitope_model_building.ipynb`: Jupyter Notebook that pre-processes data and uses it for model training to develop a UNet model to identify epitope binding regions given site-directed mutagenesis data from the AlphaSeq assay for the SARS-CoV-2 Spike RBD.
 - `LICENCE`: MIT
 - `manuscript_data/`: Directory with supplemental data from manuscript. A few files have been converted from excel to csv format compared to the archived manuscript.
 - `additional_data/`: Directory with additional data associated with this analysis.
     - `pdb_identifiers.csv`: File containing PDB file information and annotations about antibody naming, structural primary (SARS-CoV-2 related) and secondary (antibody or variable chains).
     - `interacting_atoms.csv`: File containing all atoms interacting between primary and secondary chains for each of the structures, including type of atoms, locations, associated residues, coordinates, and interacting (int_*) atoms from secondary chains. 
     - `interacting_residues.csv`: File containing all residues interacting between primary and secondary chains for each of the structures, including residue information, loaction, coordinate, minimal distance between interacting atoms, coordinate information for CA atoms and interacting (int_*) residue information.
+    - `epitope_discovery_predictions.csv`: File containing the predictions for all the samples with mutagensis data from the manuscript.
+- `models`: Directory containing the model data from level 2 UNet models for predicting epitope binding domains in the SARS-CoV-2 RBD given mutagenesis data.
+    - `unet_lvl2_epitope_discovery_1M`: Model for epitope discovery using around 1M parameters.
+    - `unet_lvl2_epitope_discovery_4M`: Model for epitope discovery using around 4M parameters.
 
 ## Notes:
 1. PDB search options often return unrelated structures or multiple structures have been submitted matching the query ("antibody identifier" + "SARS-CoV-2"). In the case of multiple structures, finer resolution structures were prefered and only one structure was selected per CoV binder. 21 structures were identified for use in this assessment.
