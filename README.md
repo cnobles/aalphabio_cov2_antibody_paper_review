@@ -33,6 +33,7 @@ The following are goals of this review:
 - `manuscript_PDB_comparison.ipynb`: Jupyter Notebook that quickly compares the results from the PDB scanning to the results from the manuscript and proposes a metric to measure agreement / performance.
 - `epitope_model_building.ipynb`: Jupyter Notebook that pre-processes data and uses it for model training to develop a UNet model to identify epitope binding regions given site-directed mutagenesis data from the AlphaSeq assay for the SARS-CoV-2 Spike RBD.
 - `LICENCE`: MIT
+- `conda_env.txt`: Explicit environment file from conda, can be used to recreate the working environment.
 - `manuscript_data/`: Directory with supplemental data from manuscript. A few files have been converted from excel to csv format compared to the archived manuscript.
 - `additional_data/`: Directory with additional data associated with this analysis.
     - `pdb_identifiers.csv`: File containing PDB file information and annotations about antibody naming, structural primary (SARS-CoV-2 related) and secondary (antibody or variable chains).
